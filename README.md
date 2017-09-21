@@ -12,6 +12,6 @@ A website built with handlebars and express
 
 ## build setup 
 ``` bash
-	npm install
-	npm start
+npm install
+npm start
 ```
