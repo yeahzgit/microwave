@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/style/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/style/public.css">
+	<link rel="stylesheet" type="text/css" href="/style/home.css">
+	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/89440/46979/5970c3d1f629da112c899366.css' rel='stylesheet' type='text/css' />
+	<title>{{ title }}</title>
+</head>
+<body>
+<div class="page">
+	<header class="nav-box">
+		<nav>
+			<aside class="logo">
+				<span class="chi-name">微波创新实验室</span>
+				<span class="eng-name">Microwave Innovation Laboratory</span>
+			</aside>
+			<nav class="nav">
+				<ul id="nav-list">
+					<li><a href="/home"><span>首页</span><span>Home</span></a></li>
+					<li><a href="/publications"><span>成果</span><span>Publications</span></a></li>
+					<li><a href="/news"><span>新闻</span><span>News</span></a></li>
+					<li><a href="/members"><span>成员</span><span>Members</span></a></li>
+				</ul>
+			</nav>
+		</nav>
+	</header>
+
+	<div class="container">{{{ body }}}</div>
+	<footer class="footer">
+		<div>
+			<p>Copyright &copy 2017 微波创新实验室</p>
+			<p><a href="https://xcsoft.hfut.edu.cn">技术支持 合肥工业大学（宣城校区）软件工程实验室</a></p>
+		</div>
+	</footer>
+</div>	
+<script type="text/javascript">
+	var his = location.href;
+	var rootNode = document.getElementById('nav-list');
+	var navList = rootNode.getElementsByTagName('a');
+	for(var i = 0; i < navList.length; i ++) {
+		if(his == navList[i].href) {
+			navList[i].id = 'nav-active';
+		}
+	}
+</script>
+</body>
+</html>

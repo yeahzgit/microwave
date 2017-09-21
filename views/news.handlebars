@@ -1,0 +1,47 @@
+<div class="grid">
+	{{#each news}}
+  <div class="grid-item">
+  	<img src="{{cover_url}}">
+  	<div class="news-title"><a href="/news/{{_id}}">{{lengthFilter title 8}}</a></div>
+		<div class="browsed-count">已阅读{{ browsed_count }}次</div>
+	</div>
+  {{/each}}
+</div>
+<style>
+.grid {
+  padding: 10px;
+  width: 100%;
+ }
+.grid-item {
+  margin: 10px 10px;
+  float: left;
+  width: 210px;
+  background-color: rgba(255,255,255,.3);
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.grid-item img {
+  max-width: 100%
+}
+.news-title {
+	border-bottom: 1px solid #eac8ef;
+}
+.news-title, .browsed-count {
+	line-height: 24px;
+}
+</style>
+<script src="/javascript/jquery.min.js"></script>
+<script src="/javascript/imagesloaded.pkgd.min.js"></script>
+<script src="/javascript/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+var $grid = $('.grid').masonry({
+  	itemSelector: '.grid-item',
+	  columnWidth: '.grid-item',
+	  percentPosition: true
+});
+$grid.imagesLoaded().progress(function() {
+  $grid.masonry('layout');
+});
+</script>

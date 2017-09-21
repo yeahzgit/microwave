@@ -1,0 +1,63 @@
+{{#each publications}}
+<section class="pub-list">
+	<a href="/publications/{{_id}}">
+		<div class="pub-imgbox">
+			<img class="cover-img" src="{{cover_url}}">
+			<img class="circle" src="../../picture/circle.png">
+		</div>
+	</a>
+	<div class="decoration-line">
+		<img src="../../picture/decline.png">
+	</div>
+	<div class="pub-infor">
+		<ul>
+			<li>项目名称：<a href="/publications/{{_id}}">{{ title }}</a></li>
+			<li>发布时间：{{dateFilter create_at 'yyyy-MM-dd HH:mm:ss'}}</li>
+			<li>项目介绍：{{htmlFilter content 60}}</li>
+		</ul>
+	</div>
+</section>
+{{/each}}
+
+<style type="text/css">
+.pub-list {
+	display: -webkit-box;
+	display: flex;
+	margin: 20px 0 20px 0;
+	width: 100%;
+	height: 120px;
+}
+
+.pub-imgbox {
+	height: 100px;
+	width: 100px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+
+.decoration-line {
+	width: 90px;
+}
+
+.pub-infor {
+	border: 2px solid #deaaf4;
+	font-size: 14px;
+	width: 700px;
+	line-height: 22px;
+}
+
+.pub-infor a {
+	color: #333;
+}
+
+.pub-infor>ul {
+	margin: 15px;
+}
+
+.pub-infor>ul>li {
+	list-style-type: none;
+}
+</style>

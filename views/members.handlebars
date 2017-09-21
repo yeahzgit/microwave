@@ -1,0 +1,57 @@
+<!-- 实验室教师信息 -->
+<header class="icon member-icon">
+	<img src="../../picture/cate.png">
+	<h3>教师</h3>
+</header>
+<section class="member member-list">
+	{{#each teachers}}
+	<section>
+		<div class="user-pic"><img src="{{picture_url}}"></div>
+		<ul class="infor-list">
+			<li>姓名： {{ username }}</li>
+			<li>qq： {{ qq }}</li>
+			<li>职业： {{memberStyle this.member_style}}</li>
+			<li title="{{introduce}}">个人简介： {{lengthFilter introduce 15}}</li>
+		</ul>
+	</section>
+	{{/each}}
+</section>
+
+<!-- 实验室学生信息 -->
+<header class="icon member-icon">
+	<img src="../../picture/cate.png">
+	<h3>学生</h3>
+</header>
+<section class="member member-list">
+	{{#each students}}
+	<section>
+		<div class="user-pic"><img src="{{picture_url}}"></div>
+		<ul class="infor-list">
+			<li>姓名： {{ username }}</li>
+			<li>qq： {{ qq }}</li>
+			<li>职业： {{memberStyle member_style}}</li>
+			<li title="{{introduce}}">个人简介： {{lengthFilter introduce 15}}</li>
+		</ul>
+	</section>
+	{{/each}}
+</section>
+
+<style type="text/css">
+.member-icon {
+	margin-top: 30px;
+}
+
+.member-icon img {
+	width: 50px;
+	height: 40px;
+}
+
+.member-list>section {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.member-list {
+	margin-bottom: 50px;
+}
+</style>

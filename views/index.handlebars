@@ -1,0 +1,90 @@
+<section class="section">
+	<header class="icon home-header">
+		<img src="../picture/introduce.png">
+		<h3>实验室介绍</h3>
+	</header>
+	<aside class="intro">
+	<article>{{htmlFilter introduce.content 60}}</article>
+		<div><a href="/introduce">更多</a></div>	
+	</aside>
+	<aside class="publication">
+	{{#each publication}}
+		<section>
+			<div class="pub-img">
+				<img class="cover-img" src="{{ cover_url }}">
+				<img class="circle" src="/picture/circle.png">
+			</div>
+			<a title="{{title}}" href="/publications/{{_id}}">{{lengthFilter title 8}}</a>
+		</section>
+	{{/each}}
+	</aside>
+	<div class="more"><a href="/publications">更多>></a></div>
+</section>
+
+<section class="section">
+	<header  class="icon">
+		<img src="../picture/news.png">
+		<h3>新闻</h3>
+	</header>
+	<article class="news-list">
+		<ul>
+			{{#each news}}
+			<li>
+				<a href="/news/{{_id}}" title="{{title}}">
+					<span class="order">{{overwriteIndex @index}}</span>
+					<h5 class="title">{{lengthFilter title 15}}</h5>
+				</a>
+			</li>
+			{{/each}}
+		</ul>
+	</article>
+	<div class="more"><a href="/news">更多>></a></div>
+</section>
+
+<section class="section">
+	<header  class="icon">
+		<img src="../picture/member.png">
+		<h3>成员</h3>
+	</header>
+	<section class="member">
+		{{#each members}}
+		<section>
+			<div class="user-pic"><img src="{{this.picture_url}}"></div>
+			<ul class="infor-list">
+				<li>姓名： {{ username }}</li>
+				<li>QQ： {{ qq }}</li>
+				<li>职业： {{memberStyle member_style}}</li>
+				<li title="{{introduce}}">个人简介:  {{lengthFilter introduce 15}}</li>
+			</ul>
+		</section>
+		{{/each}}
+	</section>
+	<div class="more"><a href="/members">更多>></a></div>
+</section>
+
+<section class="section">
+	<header  class="icon">
+		<img src="../picture/contact.png">
+		<h3>联系我们</h3>
+	</header>
+	<section class="contact">
+		<section>
+			<img src="../picture/location.png">
+			<div>
+				<h4>实验室地点</h4>
+				<div>合肥工业大学宣城校区计算机楼514</div>
+			</div>
+		</section>
+		<section>
+			<img src="../picture/teacher.png">
+			<div>
+				<h4>实验室教师</h4>
+				<ul class="teacher-contact">
+					<li>姜兆能 QQ: 779424641</li>
+					<li>杨晓雨 QQ: 909465804</li>
+					<li>张延孔 QQ: 825296946</li>
+				</ul>
+			</div>
+		</section>
+	</section>
+</section>

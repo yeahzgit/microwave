@@ -1,0 +1,41 @@
+<article class="detail">
+	{{#if article.title}}
+	<h1 class="detail-title">{{ article.title }}</h1>
+	{{/if}}
+	<section class="detail-infor">
+		{{#if article.editor_name}}
+		<span>编辑:</span><span>{{ article.editor_name }}</span>
+		{{/if}}
+		{{#if article.browsed_count}}
+		<span>浏览次数:</span><span>{{ article.browsed_count }}次</span>
+		{{/if}}
+	</section>
+	<section class="detail-create">
+		<span>发布时间:</span><em>{{dateFilter article.create_at 'yyyy-MM-dd HH:mm:ss'}}</em>
+	</section>
+	<article>
+		<p>{{{ article.content }}}</p>
+	</article>
+</article>
+
+<style>
+	.detail {
+		width: 800px;
+		margin: 0 auto;
+	}
+	body {
+		background-color: white;
+	}
+	.detail-title {
+		font-weight: 200;
+	}
+	.detail-infor>span, .detail-create>span {
+		margin-right: 5px;
+	}
+	.detail-infor {
+		margin: 10px 0 10px 0;
+	}
+	.detail-title, .detail-infor, .detail-create {
+		text-align: center;
+	}
+</style>
